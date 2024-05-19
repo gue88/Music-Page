@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-        <div id="song-container">
-            <div class="song-item">
-                <button class="play-button">&#9658</button>
-                <div class="song-info"
-                    <div class="song-title">Song Title
-                        <div class="seekbar-container">
-                            <input type="range" class="seekbar" value="0" max="100">
-                        </div>
-                </div>
-            </div>
+    <div class="song-container">
+      <div class="song-item">
+        <button class="play-button">►</button>
+        <div class="song-info">
+          <div class="song-title">Song Title</div>
+          <div class="seekbar-container">
+            <span class="time-start">0:00</span>
+            <input type="range" class="seekbar" value="0" max="100" />
+            <span class="time-end">0:00</span>
+          </div>
         </div>
-
-
-
-
-
+      </div>
+    </div>
+    <div class="song-container">
+      <div class="song-item">
+        <button class="play-button">►</button>
+        <div class="song-info">
+          <div class="song-title">Song Title</div>
+          <div class="seekbar-container">
+            <span class="time-start">0:00</span>
+            <input type="range" class="seekbar" value="0" max="100" />
+            <span class="time-end">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
