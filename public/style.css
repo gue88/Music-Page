@@ -38,12 +38,12 @@ body {
   background: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px; /* Equal width and height for circular shape */
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 24px; /* Increase font size for better visibility */
   cursor: pointer;
   margin-right: 20px;
   transition-duration: 0.3s;
@@ -106,4 +106,44 @@ body {
   color: rgb(0, 0, 0);
   width: 30px; /* Adjust width as needed */
   text-align: center;
+}
+
+/* General mobile adjustments */
+@media (max-width: 768px) {
+  .song-container {
+    max-width: 88vw; /* Expand the container on mobile */
+  }
+
+  .song-item {
+    padding: 20px; /* Increase padding for more breathing room */
+    border-radius: 15px;
+    margin: 15px 0; /* Add more margin for mobile spacing */
+  }
+
+  .play-button {
+    width: 50px; /* Slightly smaller for mobile */
+    height: 50px;
+    font-size: 24px; /* Adjust font size for better scaling */
+    margin-right: 15px;
+  }
+
+  .seekbar-container {
+    margin-top: 15px; /* Add more spacing for seekbar on mobile */
+  }
+
+  .seekbar {
+    height: 5px; /* Make the seekbar thicker for mobile */
+    cursor: pointer;
+  }
+
+  .seekbar::-webkit-slider-thumb {
+    width: 15px; /* Increase the thumb size */
+    height: 15px;
+    background: orange;
+  }
+
+  .time-start,
+  .time-end {
+    font-size: 16px; /* Slightly increase the font size for time labels */
+  }
 }

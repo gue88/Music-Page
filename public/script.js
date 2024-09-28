@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const audioFiles = await fetchAudioFiles(); // Fetch the audio files from server
+  const audioFiles = await fetchAudioFiles(); // Fetch the audio files from the server
   const songContainer = document.querySelector(".song-container");
 
   audioFiles.forEach((file) => {
@@ -26,7 +26,13 @@ function createSongItem(file) {
 
   const playButton = document.createElement("button");
   playButton.classList.add("play-button");
-  playButton.innerHTML = "►";
+
+  // Add the SVG play icon inside the button
+  playButton.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  `;
 
   const songInfo = document.createElement("div");
   songInfo.classList.add("song-info");
@@ -77,10 +83,19 @@ function createSongItem(file) {
   playButton.addEventListener("click", () => {
     if (audio.paused) {
       audio.play();
-      playButton.innerHTML = "❚❚"; // Pause symbol
+      playButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px">
+  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+</svg>
+
+      `; // Pause symbol
     } else {
       audio.pause();
-      playButton.innerHTML = "►"; // Play symbol
+      playButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      `; // Play symbol
     }
   });
 
